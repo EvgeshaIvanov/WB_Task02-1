@@ -28,12 +28,13 @@ class SecondActivity : AppCompatActivity() {
         val dialog = AlertDialog.Builder(this)
             .setCancelable(false)
             .setTitle("В какое активити вы хотите перейти?")
-            .setItems(arrayOf("Main Activity", "First Activity (с фрагментами)"),DialogInterface.OnClickListener { dialogInterface, i ->
-                when(i){
+            .setItems(arrayOf("Main Activity", "First Activity (с фрагментами)")
+            ) { _, i ->
+                when (i) {
                     0 -> startActivity(Intent(this, MainActivity::class.java))
                     1 -> startActivity(Intent(this, FirstActivity::class.java))
                 }
-            })
+            }
 
             .setNeutralButton("Отмена") { dialog, i -> dialog.cancel() }
             .create()
